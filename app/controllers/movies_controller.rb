@@ -37,7 +37,7 @@ class MoviesController < ApplicationController
   end
 
   def update
-    debugger
+  
     movie = Movie.find(params[:id])
 
     movie.title = params[:movie][:title]
