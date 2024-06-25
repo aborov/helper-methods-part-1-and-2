@@ -37,10 +37,11 @@ class MoviesController < ApplicationController
   end
 
   def update
-    movie = Movie.find(params.fetch(:id))
+    debugger
+    movie = Movie.find(params[:id])
 
-    # movie.title = params.fetch("title")
-    # movie.description = params.fetch("description")
+    movie.title = params[:movie][:title]
+    movie.description = params[:movie][:description]
 
     if movie.valid?
       movie.save
