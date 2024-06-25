@@ -1,22 +1,22 @@
 <div>
   <div>
     <h1>
-      Movie #<%= @movie.id %> details
+      Director #<%= @director.id %> details
     </h1>
 
     <div>
       <div>
-        <a href="<%= movies_path %>">
+        <a href="<%= directors_path %>">
           Go back
         </a>
       </div>
 
       <div>
-        <%= link_to "Edit movie", edit_movie_path(@movie) %>
+        <%= link_to "Edit director", edit_director_path(@director) %>
       </div>
 
       <div>
-        <%= link_to "Delete movie", @movie, { :data => { :turbo_method => "delete" } } %>
+        <%= link_to "Delete director", @director, { :data => { :turbo_method => "delete" } } %>
       </div>
     </div>
 
@@ -25,28 +25,41 @@
         Title
       </dt>
       <dd>
-        <%= @movie.title %>
+        <%= @director.name %>
       </dd>
 
       <dt>
-        Description
+        Dob
       </dt>
       <dd>
-        <%= @movie.description %>
+        <%= @director.dob %>
       </dd>
 
+      <dt>
+        Bio
+      </dt>
+      <dd>
+        <%= @director.bio %>
+      </dd>
+
+      <dt>
+        Image
+      </dt>
+      <dd>
+        <img src="<%= @director.image %>">
+      </dd>
       <dt>
         Created at
       </dt>
       <dd>
-        <%= time_ago_in_words(@movie.created_at) %> ago
+        <%= time_ago_in_words(@director.created_at) %> ago
       </dd>
 
       <dt>
         Updated at
       </dt>
       <dd>
-        <%= time_ago_in_words(@movie.updated_at) %> ago
+        <%= time_ago_in_words(@director.updated_at) %> ago
       </dd>
     </dl>
   </div>

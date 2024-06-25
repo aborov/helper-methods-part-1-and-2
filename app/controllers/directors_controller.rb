@@ -37,10 +37,10 @@ class DirectorsController < ApplicationController
   def update
     director = Director.find(params[:id])
 
-    director.name = params[:movie][:name]
-    director.bio = params[:movie][:bio]
-    director.dob = params[:movie][:dob]
-    director.image = params[:movie][:image]
+    director.name = params[:director][:name]
+    director.bio = params[:director][:bio]
+    director.dob = params[:director][:dob]
+    director.image = params[:director][:image]
 
     if director.valid?
       director.save

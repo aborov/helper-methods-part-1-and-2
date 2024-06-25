@@ -20,7 +20,7 @@
       Name
     </th>
 
-     <th>
+    <th>
       Dob
     </th>
 
@@ -28,7 +28,7 @@
       Bio
     </th>
 
- <th>
+    <th>
       Image
     </th>
 
@@ -44,29 +44,37 @@
     </th>
   </tr>
 
-  <% @movies.each do |movie| %>
+  <% @directors.each do |director| %>
     <tr>
       <td>
-        <%= movie.id %>
+        <%= director.id %>
       </td>
 
       <td>
-        <%= movie.title %>
+        <%= director.name %>
       </td>
 
       <td>
-        <%= movie.description %>
+        <%= director.dob %>
+      </td>
+      
+      <td>
+        <%= director.bio %>
+      </td>
+
+       <td>
+        <img src="<%= director.image %>">
       </td>
 
       <td>
-        <%= time_ago_in_words(movie.created_at) %> ago
+        <%= time_ago_in_words(director.created_at) %> ago
       </td>
       <td>
-        <%= time_ago_in_words(movie.updated_at) %> ago
+        <%= time_ago_in_words(director.updated_at) %> ago
       </td>
 
       <td>
-        <%= link_to "Show details", movie %>
+        <%= link_to "Show details", director %>
       </td>
     </tr>
   <% end %>
