@@ -7,14 +7,14 @@
 <%= form_with(url: movie_path(@movie), method: :patch, data: { turbo: false }) do %>
 
   <div>
-    <%= label_tag :title_box %>
-    <%= text_field_tag :query_title, @movie.title %>
+    <%= label_tag :title %>
+    <%= text_field_tag "movie[description]", @movie.title %>
 
   </div>
 
   <div>
-    <%= label_tag :description_box %>
-    <%= text_area_tag :query_description, @movie.description, { rows: 3 } %>
+    <%= label_tag :description %>
+    <%= text_area_tag "movie[description]", @movie.description, { rows: 3 } %>
 
   </div>
 
